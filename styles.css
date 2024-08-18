@@ -24,7 +24,31 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: relative;
 }
+/* styles.css */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* 50% transparent white */
+    z-index: 1000; /* Ensure it covers everything else */
+    opacity: 1;
+    transition: opacity 2s ease-out; /* Smooth fade out */
+    
+    /* Flexbox properties for centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay-logo {
+    max-width: 1000px; /* Adjust the size as needed */
+    max-height: 1000px;
+}
+
 header img {
     
     filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.5));
@@ -33,13 +57,27 @@ header img {
     margin-right: 20px;
     margin-left: auto;
 }
+  
+.left {
+    left: 33%;
+    text-align: center;
+    position: absolute;
+}
 header h1 {
-    font-size: 45px;
-    transform: translateX(-55%);
+    font-family: "ZCOOL QingKe HuangYou", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    
 }
 header p {
-    font-size: 20px;
-    transform: translateX(-33%);
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    margin: 0;
+    
 }
 nav {
     display: flex;

@@ -87,4 +87,14 @@ function showSlides() {
     // Change slide every 3 seconds
     setTimeout(showSlides, 3000);
 }
-showSlides();
+showSlides()
+// script.js
+window.onload = function() {
+    setTimeout(function() {
+        document.getElementById('overlay').style.opacity = '0';
+    }, 3000); // Wait 4 seconds before starting fade-out
+
+    setTimeout(function() {
+        document.getElementById('overlay').style.display = 'none';
+    }, 6000); // Remove the overlay after the fade-out is complete
+};
