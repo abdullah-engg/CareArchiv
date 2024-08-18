@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareArchiv | OTP</title>
+    <link rel="icon" href="icon.png" type="image/icon type">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="otp-page">
+    <header>
+        <div>
+            <img src = "ourlogo.png">
+        </div>
+        <div>
+            <h1>CareArchiv</h1>
+            <p>Your Health Records, Always Accessible</p>
+        </div>
+        <div>
+            <img src = "snek.png">
+        </div>
+    </header>
+
+    <div class="content otp-container">
+        <div class="box otp-box">
+            <div class="inner-box">
+                <div class="header">
+                    <span id="otp" class="active">Enter OTP sent to your registered mobile number:</span>
+                </div>
+                <form id="otp-form" action="display.html" method="get">
+                    <input type="password" placeholder="Enter OTP" inputmode="numeric" required/>
+                    <button class="action-button" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 CareArchiv. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

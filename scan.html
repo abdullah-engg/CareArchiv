@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareArchiv | Scan Records</title>
+    <link rel="icon" href="icon.png" type="image/icon type">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <header>
+        <div>
+            <img src = "ourlogo.png">
+        </div>
+        <div>
+            <h1>CareArchiv</h1>
+            <p>Your Health Records, Always Accessible</p>
+        </div>
+        <div>
+            <img src = "snek.png">
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="display.html">Patient Records</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+<div class = "details-page">
+    <div class="rectangle">
+        <div class="inner-rectangle">
+            <h1 class="title">Scan Records</h1>
+            <table id="medical-records-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Reason for Scan</th>
+                        <th>Type of Scan</th>
+                        <th>Results</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-07-01</td>
+                        <td>10:30 AM</td>
+                        <td>Routine checkup</td>
+                        <td>X-Ray</td>
+                        <td>Normal</td>
+                    </tr>
+                    <tr>
+                        <td>2024-07-15</td>
+                        <td>2:00 PM</td>
+                        <td>Headache</td>
+                        <td>CT-Scan</td>
+                        <td>Mild anomaly</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+        <form class="add-entry-form" id="add-entry-form">
+            <input type="date" id="date" required>
+            <input type="time" id="time" required>
+            <input type="text" id="place" placeholder="Reason for scan" required>
+            <input type="text" id="diagnosis" placeholder="Type of scan" required>
+            <input type="text" id="medicines" placeholder="Result of scan" required>
+            <button type="submit">Add Entry</button>
+        </form>
+    </div> 
+</div>
+<div class = "dontoverlay2">   
+    <button class="back-button" onclick="window.location.href='display.html'; return false;">Back</button>
+</div> 
+    <footer id = "footer2">
+        <p>&copy; 2024 CareArchiv. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function convertTo12HourFormat(time) {
+            const [hour, minute] = time.split(':');
+            const ampm = hour >= 12 ? 'PM' : 'AM';
+            const adjustedHour = hour % 12 || 12;
+            return `${adjustedHour}:${minute} ${ampm}`;
+        }
+
+        document.getElementById('add-entry-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var date = document.getElementById('date').value;
+            var time = convertTo12HourFormat(document.getElementById('time').value);
+            var place = document.getElementById('place').value;
+            var diagnosis = document.getElementById('diagnosis').value;
+            var medicines = document.getElementById('medicines').value;
+
+            var table = document.getElementById('medical-records-table').getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow();
+
+            newRow.insertCell(0).innerHTML = date;
+            newRow.insertCell(1).innerHTML = time;
+            newRow.insertCell(2).innerHTML = place;
+            newRow.insertCell(3).innerHTML = diagnosis;
+            newRow.insertCell(4).innerHTML = medicines;
+
+            document.getElementById('add-entry-form').reset();
+
+         
+        });
+    </script>
+</body>
+</html>

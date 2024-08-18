@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareArchiv | Medical Records</title>
+    <link rel="icon" href="icon.png" type="image/icon type">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <header>
+        <div>
+            <img src = "ourlogo.png">
+        </div>
+        <div>
+            <h1>CareArchiv</h1>
+            <p>Your Health Records, Always Accessible</p>
+        </div>
+        <div>
+            <img src = "snek.png">
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="display.html">Patient Records</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+<div class = "details-page">
+    <div class="rectangle">
+        <div class="inner-rectangle">
+            <h1 class="title">Medical Records</h1>
+            <table id="medical-records-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Country</th>
+                        <th>State</th>
+                        <th>Diagnosis</th>
+                        <th>Medicines Administered</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-07-01</td>
+                        <td>10:30 AM</td>
+                        <td>India</td>
+                        <td>Tamil Nadu</td>
+                        <td>Common Cold</td>
+                        <td>Ibuprofen, Paracetamol</td>
+                    </tr>
+                    <tr>
+                        <td>2024-07-15</td>
+                        <td>2:00 PM</td>
+                        <td>India</td>
+                        <td>Bihar</td>
+                        <td>Bacterial Infection</td>
+                        <td>Amoxicillin, Loratadine</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <form class="add-entry-form" id="add-entry-form">
+            <input type="date" id="date" required>
+            <input type="time" id="time" required>
+            <select id="country" name="country" onchange="populateStates()" required>
+                <option value="">Select a country</option>
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="Albania">Albania</option>
+                <option value="Algeria">Algeria</option>
+                <option value="Andorra">Andorra</option>
+                <option value="Angola">Angola</option>
+                <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Armenia">Armenia</option>
+                <option value="Australia">Australia</option>
+                <option value="Austria">Austria</option>
+                <option value="Azerbaijan">Azerbaijan</option>
+                <option value="Bahamas">Bahamas</option>
+                <option value="Bahrain">Bahrain</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Barbados">Barbados</option>
+                <option value="Belarus">Belarus</option>
+                <option value="Belgium">Belgium</option>
+                <option value="Belize">Belize</option>
+                <option value="Benin">Benin</option>
+                <option value="Bhutan">Bhutan</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                <option value="Botswana">Botswana</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Brunei">Brunei</option>
+                <option value="Bulgaria">Bulgaria</option>
+                <option value="Burkina Faso">Burkina Faso</option>
+                <option value="Burundi">Burundi</option>
+                <option value="Cabo Verde">Cabo Verde</option>
+                <option value="Cambodia">Cambodia</option>
+                <option value="Cameroon">Cameroon</option>
+                <option value="Canada">Canada</option>
+                <option value="Central African Republic">Central African Republic</option>
+                <option value="Chad">Chad</option>
+                <option value="Chile">Chile</option>
+                <option value="China">China</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Comoros">Comoros</option>
+                <option value="Congo, Democratic Republic of the">Congo, Democratic Republic of the</option>
+                <option value="Congo, Republic of the">Congo, Republic of the</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Croatia">Croatia</option>
+                <option value="Cuba">Cuba</option>
+                <option value="Cyprus">Cyprus</option>
+                <option value="Czech Republic">Czech Republic</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Djibouti">Djibouti</option>
+                <option value="Dominica">Dominica</option>
+                <option value="Dominican Republic">Dominican Republic</option>
+                <option value="East Timor (Timor-Leste)">East Timor (Timor-Leste)</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Egypt">Egypt</option>
+                <option value="El Salvador">El Salvador</option>
+                <option value="Equatorial Guinea">Equatorial Guinea</option>
+                <option value="Eritrea">Eritrea</option>
+                <option value="Estonia">Estonia</option>
+                <option value="Eswatini (Swaziland)">Eswatini (Swaziland)</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Fiji">Fiji</option>
+                <option value="Finland">Finland</option>
+                <option value="France">France</option>
+                <option value="Gabon">Gabon</option>
+                <option value="Gambia">Gambia</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Germany">Germany</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Greece">Greece</option>
+                <option value="Grenada">Grenada</option>
+                <option value="Guatemala">Guatemala</option>
+                <option value="Guinea">Guinea</option>
+                <option value="Guinea-Bissau">Guinea-Bissau</option>
+                <option value="Guyana">Guyana</option>
+                <option value="Haiti">Haiti</option>
+                <option value="Honduras">Honduras</option>
+                <option value="Hungary">Hungary</option>
+                <option value="Iceland">Iceland</option>
+                <option value="India">India</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Iran">Iran</option>
+                <option value="Iraq">Iraq</option>
+                <option value="Ireland">Ireland</option>
+                <option value="Israel">Israel</option>
+                <option value="Italy">Italy</option>
+                <option value="Jamaica">Jamaica</option>
+                <option value="Japan">Japan</option>
+                <option value="Jordan">Jordan</option>
+                <option value="Kazakhstan">Kazakhstan</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Kiribati">Kiribati</option>
+                <option value="Korea, North">Korea, North</option>
+                <option value="Korea, South">Korea, South</option>
+                <option value="Kosovo">Kosovo</option>
+                <option value="Kuwait">Kuwait</option>
+                <option value="Kyrgyzstan">Kyrgyzstan</option>
+                <option value="Laos">Laos</option>
+                <option value="Latvia">Latvia</option>
+                <option value="Lebanon">Lebanon</option>
+                <option value="Lesotho">Lesotho</option>
+                <option value="Liberia">Liberia</option>
+                <option value="Libya">Libya</option>
+                <option value="Liechtenstein">Liechtenstein</option>
+                <option value="Lithuania">Lithuania</option>
+                <option value="Luxembourg">Luxembourg</option>
+                <option value="Madagascar">Madagascar</option>
+                <option value="Malawi">Malawi</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Maldives">Maldives</option>
+                <option value="Mali">Mali</option>
+                <option value="Malta">Malta</option>
+                <option value="Marshall Islands">Marshall Islands</option>
+                <option value="Mauritania">Mauritania</option>
+                <option value="Mauritius">Mauritius</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Micronesia">Micronesia</option>
+                <option value="Moldova">Moldova</option>
+                <option value="Monaco">Monaco</option>
+                <option value="Mongolia">Mongolia</option>
+                <option value="Montenegro">Montenegro</option>
+                <option value="Morocco">Morocco</option>
+                <option value="Mozambique">Mozambique</option>
+                <option value="Myanmar (Burma)">Myanmar (Burma)</option>
+                <option value="Namibia">Namibia</option>
+                <option value="Nauru">Nauru</option>
+                <option value="Nepal">Nepal</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Nicaragua">Nicaragua</option>
+                <option value="Niger">Niger</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="North Macedonia">North Macedonia</option>
+                <option value="Norway">Norway</option>
+                <option value="Oman">Oman</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Palau">Palau</option>
+                <option value="Panama">Panama</option>
+                <option value="Papua New Guinea">Papua New Guinea</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Peru">Peru</option>
+                <option value="Philippines">Philippines</option>
+                <option value="Poland">Poland</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Qatar">Qatar</option>
+                <option value="Romania">Romania</option>
+                <option value="Russia">Russia</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                <option value="Saint Lucia">Saint Lucia</option>
+                <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+                <option value="Samoa">Samoa</option>
+                <option value="San Marino">San Marino</option>
+                <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="Senegal">Senegal</option>
+                <option value="Serbia">Serbia</option>
+                <option value="Seychelles">Seychelles</option>
+                <option value="Sierra Leone">Sierra Leone</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Slovakia">Slovakia</option>
+                <option value="Slovenia">Slovenia</option>
+                <option value="Solomon Islands">Solomon Islands</option>
+                <option value="Somalia">Somalia</option>
+                <option value="South Africa">South Africa</option>
+                <option value="South Sudan">South Sudan</option>
+                <option value="Spain">Spain</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="Sudan">Sudan</option>
+                <option value="Suriname">Suriname</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Switzerland">Switzerland</option>
+                <option value="Syria">Syria</option>
+                <option value="Taiwan">Taiwan</option>
+                <option value="Tajikistan">Tajikistan</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Togo">Togo</option>
+                <option value="Tonga">Tonga</option>
+                <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                <option value="Tunisia">Tunisia</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Turkmenistan">Turkmenistan</option>
+                <option value="Tuvalu">Tuvalu</option>
+                <option value="Uganda">Uganda</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="United Arab Emirates">United Arab Emirates</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="United States">United States</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Uzbekistan">Uzbekistan</option>
+                <option value="Vanuatu">Vanuatu</option>
+                <option value="Vatican City (Holy See)">Vatican City (Holy See)</option>
+                <option value="Venezuela">Venezuela</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="Yemen">Yemen</option>
+                <option value="Zambia">Zambia</option>
+                <option value="Zimbabwe">Zimbabwe</option>
+            </select>
+            <select id="state" name="state" required>
+                <option value="">Select a state</option>
+                <!-- States will be populated here based on the selected country -->
+            </select>
+            <input type="text" id="diagnosis" placeholder="Diagnosis" required>
+            <input type="text" id="medicines" placeholder="Medicines Administered" required>
+            <button type="submit">Add Entry</button>
+        </form>
+    </div>
+    
+    
+</div>
+<div class = "dontoverlay">
+    <button class="back-button" onclick="window.location.href='display.html'; return false;">Back</button>
+</div>
+<footer id = "footer">
+        <p>&copy; 2024 CareArchiv. All Rights Reserved.</p>
+</footer>    
+
+    <script>
+        function convertTo12HourFormat(time) {
+            const [hour, minute] = time.split(':');
+            const ampm = hour >= 12 ? 'PM' : 'AM';
+            const adjustedHour = hour % 12 || 12;
+            return `${adjustedHour}:${minute} ${ampm}`;
+        }
+
+        document.getElementById('add-entry-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var date = document.getElementById('date').value;
+            var time = convertTo12HourFormat(document.getElementById('time').value);
+            var country = document.getElementById('country').value;
+            var state = document.getElementById('state').value;
+            var diagnosis = document.getElementById('diagnosis').value;
+            var medicines = document.getElementById('medicines').value;
+
+            var table = document.getElementById('medical-records-table').getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow();
+
+            newRow.insertCell(0).innerHTML = date;
+            newRow.insertCell(1).innerHTML = time;
+            newRow.insertCell(2).innerHTML = country;
+            newRow.insertCell(3).innerHTML = state;
+            newRow.insertCell(4).innerHTML = diagnosis;
+            newRow.insertCell(5).innerHTML = medicines;
+
+            document.getElementById('add-entry-form').reset();
+        });
+
+        // Populate states based on the selected country
+        function populateStates() {
+            var country = document.getElementById('country').value;
+            var stateSelect = document.getElementById('state');
+            stateSelect.innerHTML = ''; // Clear existing options
+            if (country === 'Afghanistan') {
+    var states = ['Badakhshan', 'Badghis', 'Baghlan', 'Balkh', 'Bamyan', 'Daykundi', 'Farah', 'Faryab', 'Ghazni', 'Ghor', 'Helmand', 'Herat', 'Jowzjan', 'Kabul', 'Kandahar', 'Kapisa', 'Khost', 'Kunar', 'Kunduz', 'Laghman', 'Logar', 'Nangarhar', 'Nimroz', 'Nuristan', 'Paktia', 'Paktika', 'Panjsher', 'Samangan', 'Sar-e Pol', 'Takhar', 'Urozgan', 'Wardak', 'Zabul'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Albania') {
+    var states = ['Berat', 'Shkodra', 'Fier', 'Korçë', 'Dibër', 'Vlorë', 'Tiranë', 'Lezhë', 'Gjirokastër', 'Kukës'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Algeria') {
+    var states = ['Adrar', 'Chlef', 'Laghouat', 'Oum El Bouaghi', 'Batna', 'Béjaïa', 'Biskra', 'Béchar', 'Blida', 'Bouira', 'Tamanrasset', 'Tébessa', 'Tlemcen', 'Tiaret', 'Tizi Ouzou', 'Algiers', 'Djelfa', 'Jijel', 'Sétif', 'Saida', 'Skikda', 'Sidi Bel Abbès', 'Annaba', 'Guelma', 'Constantine', 'Médéa', 'Mostaganem', 'Msila', 'Mascara', 'Oujda', 'El Tarf', 'Souk Ahras', 'El Oued', 'Khenchela', 'Naama', 'Aïn Témouchent', 'Ghardaïa', 'Relizane', 'El Bayadh'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Andorra') {
+    var states = ['Andorra la Vella', 'Escaldes-Engordany', 'Encamp', 'Ordino', 'Sant Julià de Lòria', 'Canillo', 'Escaldes-Engordany'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Angola') {
+    var states = ['Bengo', 'Benguela', 'Bié', 'Cabinda', 'Cuanza Norte', 'Cuanza Sul', 'Cunene', 'Huambo', 'Huíla', 'Luanda', 'Lunda Norte', 'Lunda Sul', 'Malanje', 'Moxico', 'Namibe', 'Uíge', 'Zaire'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Antigua and Barbuda') {
+    var states = ['Antigua', 'Barbuda'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Argentina') {
+    var states = ['Buenos Aires', 'Catamarca', 'Chaco', 'Chubut', 'CABA', 'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa', 'Jujuy', 'La Pampa', 'La Rioja', 'Mendoza', 'Misiones', 'Neuquén', 'Río Negro', 'Salta', 'San Juan', 'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego', 'Tucumán'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Armenia') {
+    var states = ['Ararat', 'Armavir', 'Gegharkunik', 'Kotayk', 'Lori', 'Shirak', 'Syunik', 'Vayots Dzor', 'Yerevan'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Australia') {
+    var states = ['New South Wales', 'Victoria', 'Queensland', 'South Australia', 'Western Australia', 'Tasmania', 'Australian Capital Territory', 'Northern Territory'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Austria') {
+    var states = ['Burgenland', 'Carinthia', 'Lower Austria', 'Upper Austria', 'Salzburg', 'Styria', 'Tyrol', 'Vorarlberg', 'Vienna'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Azerbaijan') {
+    var states = ['Absheron', 'Baku', 'Ganja', 'Lankaran', 'Mingachevir', 'Guba', 'Shaki', 'Yevlakh', 'Naftalan', 'Shirvan', 'Khachmaz', 'Lankaran', 'Zakatala', 'Guba-Khachmaz', 'Quba-Khachmaz'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Bahamas') {
+    var states = ['Abaco', 'Acklins and Crooked Islands', 'Andros', 'Bimini', 'Berry Islands', 'Bight', 'Cat Island', 'Exuma', 'Grand Bahama', 'Harbour Island', 'Long Island', 'New Providence', 'San Salvador and Rum Cay'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Bahrain') {
+    var states = ['Capital Governorate', 'Central Governorate', 'Muharraq Governorate', 'Northern Governorate', 'Southern Governorate'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Bangladesh') {
+    var states = ['Dhaka', 'Chattogram', 'Khulna', 'Rajshahi', 'Barishal', 'Sylhet', 'Rangpur', 'Mymensingh'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Barbados') {
+    var states = ['Christ Church', 'Saint Andrew', 'Saint George', 'Saint James', 'Saint John', 'Saint Joseph', 'Saint Lucy', 'Saint Michael', 'Saint Peter', 'Saint Philip', 'Saint Thomas'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Belarus') {
+    var states = ['Brest', 'Gomel', 'Grodno', 'Minsk', 'Minsk Region', 'Vitebsk', 'Vitebsk Region'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Belgium') {
+    var states = ['Antwerp', 'Brabant', 'Hainaut', 'Liège', 'Limburg', 'Luxembourg', 'Namur', 'Brussels-Capital Region'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Belize') {
+    var states = ['Belize', 'Cayo', 'Corozal', 'Orange Walk', 'Stann Creek', 'Toledo'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Benin') {
+    var states = ['Alibori', 'Atakora', 'Atlantic', 'Borgou', 'Collines', 'Donga', 'Kouffo', 'Littoral', 'Mono', 'Ouémé', 'Plateau', 'Zou'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Bhutan') {
+    var states = ['Bumthang', 'Chukha', 'Dagana', 'Gasa', 'Haa', 'Lhuntse', 'Mongar', 'Paro', 'Punakha', 'Samdrup Jongkhar', 'Samtse', 'Trashigang', 'Trashiyangtse', 'Trongsa', 'Wangdue Phodrang', 'Zhemgang'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Bolivia') {
+    var states = ['Chuquisaca', 'Cochabamba', 'Colcha', 'La Paz', 'Oruro', 'Pando', 'Potosí', 'Santa Cruz', 'Tarija'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Bosnia and Herzegovina') {
+    var states = ['Federation of Bosnia and Herzegovina', 'Republika Srpska', 'Brčko District'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Botswana') {
+    var states = ['Central District', 'Ghanzi District', 'Kgalagadi District', 'Kgatleng District', 'Kweneng District', 'North-East District', 'North-West District', 'South-East District', 'Southern District'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Brazil') {
+    var states = ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Brunei') {
+    var states = ['Belait', 'Brunei-Muara', 'Temburong', 'Tutong'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Bulgaria') {
+    var states = ['Blagoevgrad', 'Burgas', 'Dobrich', 'Gabrovo', 'Haskovo', 'Kardzhali', 'Kyustendil', 'Lovech', 'Montana', 'Pazardzhik', 'Pernik', 'Pleven', 'Plovdiv', 'Razgrad', 'Ruse', 'Shumen', 'Silistra', 'Sliven', 'Smolyan', 'Sofia City', 'Sofia Province', 'Stara Zagora', 'Targovishte', 'Varna', 'Veliko Tarnovo', 'Vidin', 'Vratsa', 'Yambol'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Burkina Faso') {
+    var states = ['Boucle du Mouhoun', 'Cascades', 'Centre', 'Centre-Est', 'Centre-Nord', 'Centre-Ouest', 'Centre-Sud', 'Est', 'Hauts-Bassins', 'Nord', 'Plateau-Central', 'Sahel', 'Sud-Ouest'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Burundi') {
+    var states = ['Bubanza', 'Bujumbura Mairie', 'Bujumbura Rural', 'Bururi', 'Cankuzo', 'Cibitoke', 'Gitega', 'Karuzi', 'Kayanza', 'Kirundo', 'Makamba', 'Muramvya', 'Muyinga', 'Mwaro', 'Ngozi', 'Rumonge', 'Rutana', 'Ruyigi'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Cabo Verde') {
+    var states = ['Barlavento Islands', 'Sotavento Islands'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Cambodia') {
+    var states = ['Banteay Meanchey', 'Battambang', 'Kampong Cham', 'Kampong Chhnang', 'Kampong Speu', 'Kampong Thom', 'Kampot', 'Kandal', 'Koh Kong', 'Kratie', 'Mondulkiri', 'Oddar Meanchey', 'Pailin', 'Phnom Penh', 'Preah Vihear', 'Prey Veng', 'Pursat', 'Ratanakiri', 'Siem Reap', 'Preah Sihanouk', 'Stung Treng', 'Svay Rieng', 'Takeo', 'Tbong Khmum'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Cameroon') {
+    var states = ['Adamawa', 'Centre', 'East', 'Far North', 'Littoral', 'North', 'Northwest', 'South', 'Southwest', 'West'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Canada') {
+    var states = ['Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland and Labrador', 'Nova Scotia', 'Ontario', 'Prince Edward Island', 'Quebec', 'Saskatchewan', 'Northwest Territories', 'Nunavut', 'Yukon'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Central African Republic') {
+    var states = ['Bamingui-Bangoran', 'Basse-Kotto', 'Haut-Mbomou', 'Haute-Kotto', 'Kémo', 'Lobaye', 'Mambéré-Kadéï', 'Mbomou', 'Nana-Grébizi', 'Nana-Mambéré', 'Ombella-Mpoko', 'Ouaka', 'Ouham', 'Ouham-Pendé', 'Sangha-Mbaéré', 'Vakaga'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Chad') {
+    var states = ['Batha', 'Borkou', 'Chari-Baguirmi', 'Hadjer-Lamis', 'Kanem', 'Lac', 'Logone Occidental', 'Logone Oriental', 'Mandoul', 'Mayo-Kebbi Est', 'Mayo-Kebbi Ouest', 'Moyen-Chari', 'Ouaddaï', 'Salamat', 'Sila', 'Tandjilé', 'Tibesti', 'Wadi Fira'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Chile') {
+    var states = ['Arica and Parinacota', 'Tarapacá', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaíso', 'Santiago Metropolitan', 'O\'Higgins', 'Maule', 'Ñuble', 'Biobío', 'Araucanía', 'Los Ríos', 'Los Lagos', 'Aysén', 'Magallanes'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'China') {
+    var states = ['Anhui', 'Beijing', 'Chongqing', 'Fujian', 'Gansu', 'Guangdong', 'Guangxi', 'Guizhou', 'Hainan', 'Hebei', 'Heilongjiang', 'Henan', 'Hubei', 'Hunan', 'Inner Mongolia', 'Jiangsu', 'Jiangxi', 'Jilin', 'Liaoning', 'Ningxia', 'Qinghai', 'Shaanxi', 'Shandong', 'Shanghai', 'Shanxi', 'Sichuan', 'Tianjin', 'Tibet', 'Xinjiang', 'Yunnan', 'Zhejiang'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Colombia') {
+    var states = ['Amazonas', 'Antioquia', 'Arauca', 'Atlántico', 'Bogotá', 'Bolívar', 'Boyacá', 'Caldas', 'Caquetá', 'Casanare', 'Cauca', 'Cesar', 'Chocó', 'Córdoba', 'Cundinamarca', 'Guainía', 'Guaviare', 'Huila', 'La Guajira', 'Magdalena', 'Meta', 'Nariño', 'Norte de Santander', 'Putumayo', 'Quindío', 'Risaralda', 'San Andrés and Providencia', 'Santander', 'Sucre', 'Tolima', 'Valle del Cauca', 'Vaupés', 'Vichada'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Comoros') {
+    var states = ['Anjouan', 'Grande Comore', 'Mohéli'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Congo, Democratic Republic of the') {
+    var states = ['Bandundu', 'Bas-Congo', 'Équateur', 'Kasai-Occidental', 'Kasai-Oriental', 'Katanga', 'Kinshasa', 'Maniema', 'North Kivu', 'Orientale', 'South Kivu'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Congo, Republic of the') {
+    var states = ['Bouenza', 'Brazzaville', 'Cuvette', 'Cuvette-Ouest', 'Kouilou', 'Lekoumou', 'Likouala', 'Niari', 'Plateaux', 'Pointe-Noire', 'Pool', 'Sangha'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+} else if (country === 'Costa Rica') {
+    var states = ['Alajuela', 'Cartago', 'Guanacaste', 'Heredia', 'Limón', 'Puntarenas', 'San José'];
+    states.forEach(function(state) {
+        var option = document.createElement('option');
+        option.value = state;
+        option.text = state;
+        stateSelect.add(option);
+    });
+}
+
+
+
+
+
+            // Add similar conditions for other countries
+        }
+    </script>
+</body>
+</html>
